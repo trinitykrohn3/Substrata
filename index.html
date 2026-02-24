@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Substrata — De-Risking the Future of AI Infrastructure</title>
+<title>Substrata — The Earth is the Cloud's Heat Sink</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@300;400;500&family=Space+Grotesk:wght@300;400;600&display=swap" rel="stylesheet">
 <style>
@@ -27,12 +27,13 @@
   /* NAV */
   nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 1.25rem 3rem; backdrop-filter: blur(20px); background: rgba(13,12,10,0.7); border-bottom: 1px solid var(--border); }
   .nav-logo { display: flex; align-items: center; gap: 0.75rem; }
-  .dot-grid { display: grid; grid-template-columns: repeat(5, 6px); gap: 3px; }
+  .dot-grid { display: grid; grid-template-columns: repeat(4, 6px); gap: 3px; }
   .dot-grid span { width: 6px; height: 6px; border-radius: 50%; animation: pulse-dot 3s ease-in-out infinite; }
-  .dot-grid span:nth-child(-n+5)  { background: var(--red);    animation-delay: 0s; }
-  .dot-grid span:nth-child(n+6):nth-child(-n+10)  { background: var(--orange); animation-delay: 0.3s; }
-  .dot-grid span:nth-child(n+11):nth-child(-n+15) { background: var(--yellow); animation-delay: 0.6s; }
-  @keyframes pulse-dot { 0%,100% { opacity:1; transform:scale(1); } 50% { opacity:0.6; transform:scale(0.85); } }
+  .dot-grid span:nth-child(-n+4)  { background: var(--red);    animation-delay: 0s; }
+  .dot-grid span:nth-child(n+5):nth-child(-n+8)  { background: var(--orange); animation-delay: 0.3s; }
+  .dot-grid span:nth-child(n+9):nth-child(-n+12) { background: var(--yellow); animation-delay: 0.6s; }
+  .dot-grid span:nth-child(n+13) { background: var(--blue); animation-delay: 0.9s; }
+  @keyframes pulse-dot { 0%,100% { opacity:1; transform:scale(1); } 50% { opacity:0.5; transform:scale(0.8); } }
   .nav-wordmark { font-family: 'DM Mono', monospace; font-size: 0.85rem; letter-spacing: 0.25em; font-weight: 500; color: var(--text); text-transform: uppercase; }
   .nav-links { display: flex; gap: 2rem; }
   .nav-links a { font-size: 0.8rem; letter-spacing: 0.05em; color: var(--muted); text-decoration: none; text-transform: uppercase; transition: color 0.2s; }
@@ -47,9 +48,10 @@
   .hero-content { position: relative; z-index: 1; max-width: 900px; }
   .hero-tag { font-family: 'DM Mono', monospace; font-size: 0.72rem; letter-spacing: 0.2em; color: var(--orange); text-transform: uppercase; margin-bottom: 2rem; display: flex; align-items: center; gap: 0.75rem; }
   .hero-tag::before { content: ''; display: block; width: 32px; height: 1px; background: var(--orange); }
-  h1 { font-family: 'DM Serif Display', serif; font-size: clamp(3rem, 6vw, 5.5rem); line-height: 1.05; font-weight: 400; margin-bottom: 2rem; letter-spacing: -0.02em; }
+  h1 { font-family: 'DM Serif Display', serif; font-size: clamp(3rem, 6vw, 5.5rem); line-height: 1.05; font-weight: 400; margin-bottom: 1.25rem; letter-spacing: -0.02em; }
   h1 em { font-style: italic; background: linear-gradient(90deg, var(--red), var(--orange), var(--yellow)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
-  .hero-sub { font-size: 1.1rem; color: var(--muted); max-width: 560px; margin-bottom: 3rem; line-height: 1.75; }
+  .hero-sub-tagline { font-family: 'DM Mono', monospace; font-size: 0.8rem; letter-spacing: 0.15em; color: var(--muted); text-transform: uppercase; margin-bottom: 1.75rem; }
+  .hero-sub { font-size: 1.05rem; color: var(--muted); max-width: 560px; margin-bottom: 3rem; line-height: 1.75; }
   .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
 
   .btn-primary { padding: 0.9rem 2.2rem; background: linear-gradient(135deg, var(--red), var(--orange)); color: white; border: none; border-radius: 2px; font-family: 'DM Mono', monospace; font-size: 0.8rem; letter-spacing: 0.1em; text-transform: uppercase; cursor: pointer; text-decoration: none; transition: transform 0.2s, box-shadow 0.2s; box-shadow: 0 0 30px rgba(240,113,40,0.3); }
@@ -84,6 +86,7 @@
   .problem { background: var(--mid); }
   .problem-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; margin-top: 4rem; }
   .problem-text p { color: var(--muted); line-height: 1.8; margin-bottom: 1.5rem; }
+  .problem-callout { font-family: 'DM Mono', monospace; font-size: 0.72rem; letter-spacing: 0.08em; color: var(--muted); border-left: 2px solid var(--orange); padding-left: 1rem; line-height: 1.7; }
   .problem-visual { position: relative; padding: 2rem; border: 1px solid var(--border); border-radius: 4px; background: var(--surface); }
   .water-wall-label { font-family: 'DM Mono', monospace; font-size: 0.7rem; letter-spacing: 0.15em; color: var(--red); text-transform: uppercase; margin-bottom: 1rem; }
   .bar-chart { display: flex; flex-direction: column; gap: 0.75rem; }
@@ -94,22 +97,22 @@
   @keyframes grow { to { width: var(--w); } }
   .bar-val { font-family: 'DM Mono', monospace; font-size: 0.7rem; color: var(--muted); width: 60px; text-align: right; }
 
-  /* TECH CARDS */
-  .tech-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 4rem; }
-  .tech-card { padding: 2rem; border: 1px solid var(--border); border-radius: 4px; background: var(--surface); transition: transform 0.3s, border-color 0.3s; }
-  .tech-card:hover { transform: translateY(-4px); }
-  .tech-card:nth-child(1):hover { border-color: var(--red); }
-  .tech-card:nth-child(2):hover { border-color: var(--orange); }
-  .tech-card:nth-child(3):hover { border-color: var(--yellow); }
-  .tech-card-accent { width: 32px; height: 3px; border-radius: 2px; margin-bottom: 1.5rem; }
-  .tech-card:nth-child(1) .tech-card-accent { background: var(--red); }
-  .tech-card:nth-child(2) .tech-card-accent { background: var(--orange); }
-  .tech-card:nth-child(3) .tech-card-accent { background: var(--yellow); }
-  .tech-card h3 { font-family: 'DM Serif Display', serif; font-size: 1.3rem; font-weight: 400; margin-bottom: 0.75rem; }
-  .tech-card p { font-size: 0.88rem; color: var(--muted); line-height: 1.7; }
-  .tech-card-tag { font-family: 'DM Mono', monospace; font-size: 0.62rem; letter-spacing: 0.15em; color: var(--muted); text-transform: uppercase; margin-top: 1.25rem; padding-top: 1.25rem; border-top: 1px solid var(--border); }
+  /* SOLUTION PILLARS */
+  .pillar-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 4rem; }
+  .pillar-card { padding: 2rem; border: 1px solid var(--border); border-radius: 4px; background: var(--surface); transition: transform 0.3s, border-color 0.3s; }
+  .pillar-card:hover { transform: translateY(-4px); }
+  .pillar-card:nth-child(1):hover { border-color: var(--blue); }
+  .pillar-card:nth-child(2):hover { border-color: var(--orange); }
+  .pillar-card:nth-child(3):hover { border-color: var(--yellow); }
+  .pillar-accent { width: 32px; height: 3px; border-radius: 2px; margin-bottom: 1.5rem; }
+  .pillar-card:nth-child(1) .pillar-accent { background: var(--blue); }
+  .pillar-card:nth-child(2) .pillar-accent { background: var(--orange); }
+  .pillar-card:nth-child(3) .pillar-accent { background: var(--yellow); }
+  .pillar-card h3 { font-family: 'DM Serif Display', serif; font-size: 1.3rem; font-weight: 400; margin-bottom: 0.75rem; }
+  .pillar-card p { font-size: 0.88rem; color: var(--muted); line-height: 1.7; }
+  .pillar-tag { font-family: 'DM Mono', monospace; font-size: 0.62rem; letter-spacing: 0.15em; color: var(--muted); text-transform: uppercase; margin-top: 1.25rem; padding-top: 1.25rem; border-top: 1px solid var(--border); }
 
-  /* VOXEL — D3 SVG isometric */
+  /* VOXEL */
   .voxel-section { background: var(--mid); text-align: center; }
   .voxel-canvas-wrap { margin: 4rem auto 0; max-width: 860px; position: relative; }
   .voxel-svg-wrap { position: relative; width: 100%; height: 400px; overflow: hidden; border-radius: 12px; background: #111110; border: 1px solid rgba(255,255,255,0.05); display: flex; align-items: center; justify-content: center; }
@@ -121,20 +124,19 @@
   .voxel-label-sub { font-family: 'DM Mono', monospace; font-size: 0.58rem; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.25); }
   .canvas-label { font-family: 'DM Mono', monospace; font-size: 0.65rem; letter-spacing: 0.1em; color: var(--muted); text-transform: uppercase; margin-top: 1rem; }
 
-  /* ROADMAP */
-  .roadmap-phases { display: grid; grid-template-columns: repeat(3, 1fr); margin-top: 4rem; border: 1px solid var(--border); border-radius: 4px; overflow: hidden; }
-  .phase { padding: 2.5rem; border-right: 1px solid var(--border); }
-  .phase:last-child { border-right: none; }
-  .phase-num { font-family: 'DM Mono', monospace; font-size: 0.65rem; letter-spacing: 0.2em; color: var(--muted); text-transform: uppercase; margin-bottom: 1rem; }
-  .phase-year { font-family: 'DM Serif Display', serif; font-size: 2.2rem; margin-bottom: 0.5rem; }
-  .phase:nth-child(1) .phase-year { color: var(--red); }
-  .phase:nth-child(2) .phase-year { color: var(--orange); }
-  .phase:nth-child(3) .phase-year { color: var(--yellow); }
-  .phase h3 { font-size: 1rem; font-weight: 600; margin-bottom: 1rem; }
-  .phase ul { list-style: none; }
-  .phase ul li { font-size: 0.82rem; color: var(--muted); line-height: 1.6; padding: 0.4rem 0; border-bottom: 1px solid var(--border); display: flex; gap: 0.6rem; align-items: flex-start; }
-  .phase ul li:last-child { border-bottom: none; }
-  .phase ul li::before { content: '→'; color: var(--orange); flex-shrink: 0; }
+  /* BUSINESS MODEL */
+  .model-tiers { display: grid; grid-template-columns: repeat(3, 1fr); margin-top: 4rem; border: 1px solid var(--border); border-radius: 4px; overflow: hidden; }
+  .tier { padding: 2.5rem; border-right: 1px solid var(--border); transition: background 0.3s; }
+  .tier:last-child { border-right: none; }
+  .tier:hover { background: var(--surface); }
+  .tier-num { font-family: 'DM Mono', monospace; font-size: 0.65rem; letter-spacing: 0.2em; color: var(--muted); text-transform: uppercase; margin-bottom: 0.75rem; }
+  .tier-name { font-family: 'DM Serif Display', serif; font-size: 1.5rem; margin-bottom: 0.4rem; }
+  .tier:nth-child(1) .tier-name { color: var(--blue); }
+  .tier:nth-child(2) .tier-name { color: var(--orange); }
+  .tier:nth-child(3) .tier-name { color: var(--yellow); }
+  .tier-price { font-family: 'DM Mono', monospace; font-size: 0.75rem; letter-spacing: 0.08em; color: var(--muted); margin-bottom: 1.25rem; padding-bottom: 1.25rem; border-bottom: 1px solid var(--border); }
+  .tier p { font-size: 0.85rem; color: var(--muted); line-height: 1.7; }
+  .model-note { font-family: 'DM Mono', monospace; font-size: 0.72rem; letter-spacing: 0.05em; color: var(--muted); margin-top: 2rem; border-left: 2px solid var(--orange); padding-left: 1rem; }
 
   /* TEAM */
   .team-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 4rem; }
@@ -144,16 +146,21 @@
   .team-card:nth-child(2) .role-icon { background: rgba(240,113,40,0.15); }
   .team-card:nth-child(3) .role-icon { background: rgba(245,200,66,0.15); }
   .team-card h3 { font-family: 'DM Serif Display', serif; font-size: 1.2rem; font-weight: 400; margin-bottom: 0.25rem; }
-  .role-sub { font-family: 'DM Mono', monospace; font-size: 0.65rem; letter-spacing: 0.15em; color: var(--orange); text-transform: uppercase; margin-bottom: 1rem; }
+  .role-label { font-family: 'DM Mono', monospace; font-size: 0.65rem; letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 0.25rem; }
+  .team-card:nth-child(1) .role-label { color: var(--red); }
+  .team-card:nth-child(2) .role-label { color: var(--orange); }
+  .team-card:nth-child(3) .role-label { color: var(--yellow); }
+  .role-bg { font-family: 'DM Mono', monospace; font-size: 0.65rem; color: var(--muted); letter-spacing: 0.05em; margin-bottom: 1rem; }
   .team-card p { font-size: 0.82rem; color: var(--muted); line-height: 1.7; }
   .skills-row { display: flex; flex-wrap: wrap; gap: 0.4rem; justify-content: center; margin-top: 1.25rem; }
   .skill-pill { font-family: 'DM Mono', monospace; font-size: 0.6rem; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.25rem 0.6rem; border-radius: 2px; border: 1px solid var(--border); color: var(--muted); }
+  .team-footer-note { margin-top: 2rem; font-family: 'DM Mono', monospace; font-size: 0.72rem; letter-spacing: 0.08em; color: var(--muted); text-align: center; padding: 1rem; border: 1px solid var(--border); border-radius: 4px; background: var(--surface); }
 
   /* CTA */
   .cta-footer { background: var(--surface); border-top: 1px solid var(--border); text-align: center; padding: 8rem 3rem; position: relative; overflow: hidden; }
   .cta-footer::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse 60% 60% at 50% 50%, rgba(240,113,40,0.08), transparent); }
   .cta-footer h2 { font-size: clamp(2.2rem, 4vw, 3.8rem); margin-bottom: 1rem; position: relative; }
-  .cta-footer p { color: var(--muted); max-width: 500px; margin: 0 auto 2.5rem; position: relative; }
+  .cta-footer p { color: var(--muted); max-width: 520px; margin: 0 auto 2.5rem; position: relative; }
   .thermal-dots { display: flex; justify-content: center; gap: 8px; margin-bottom: 3rem; position: relative; }
   .thermal-dots span { width: 10px; height: 10px; border-radius: 50%; }
   .thermal-dots span:nth-child(1) { background: var(--red);    animation: pulse-dot 2s ease-in-out infinite 0s; }
@@ -170,6 +177,7 @@
   .fade-up:nth-child(2) { animation-delay: 0.25s; }
   .fade-up:nth-child(3) { animation-delay: 0.4s; }
   .fade-up:nth-child(4) { animation-delay: 0.55s; }
+  .fade-up:nth-child(5) { animation-delay: 0.7s; }
   .reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease, transform 0.6s ease; }
   .reveal.visible { opacity: 1; transform: translateY(0); }
 
@@ -179,9 +187,10 @@
     .hero { padding: 8rem 1.5rem 4rem; }
     .thermal-bar { display: none; }
     section { padding: 5rem 1.5rem; }
-    .problem-grid, .tech-cards, .roadmap-phases, .team-cards { grid-template-columns: 1fr; }
+    .problem-grid, .pillar-cards, .model-tiers, .team-cards { grid-template-columns: 1fr; }
     .stats { grid-template-columns: 1fr; }
     .stat { border-right: none; border-bottom: 1px solid var(--border); }
+    .tier { border-right: none; border-bottom: 1px solid var(--border); }
     footer { flex-direction: column; gap: 0.5rem; text-align: center; }
   }
 </style>
@@ -192,19 +201,20 @@
 <nav>
   <div class="nav-logo">
     <div class="dot-grid">
-      <span></span><span></span><span></span><span></span><span></span>
-      <span style="background:var(--orange)"></span><span style="background:var(--orange)"></span><span style="background:var(--orange)"></span><span style="background:var(--orange)"></span><span style="background:var(--orange)"></span>
-      <span style="background:var(--yellow)"></span><span style="background:var(--yellow)"></span><span style="background:var(--yellow)"></span><span style="background:var(--yellow)"></span><span style="background:var(--yellow)"></span>
+      <span></span><span></span><span></span><span></span>
+      <span style="background:var(--orange)"></span><span style="background:var(--orange)"></span><span style="background:var(--orange)"></span><span style="background:var(--orange)"></span>
+      <span style="background:var(--yellow)"></span><span style="background:var(--yellow)"></span><span style="background:var(--yellow)"></span><span style="background:var(--yellow)"></span>
+      <span style="background:var(--blue)"></span><span style="background:var(--blue)"></span><span style="background:var(--blue)"></span><span style="background:var(--blue)"></span>
     </div>
     <span class="nav-wordmark">Substrata</span>
   </div>
   <div class="nav-links">
     <a href="#problem">Problem</a>
-    <a href="#solution">Technology</a>
-    <a href="#roadmap">Roadmap</a>
+    <a href="#solution">Solution</a>
+    <a href="#model">Business</a>
     <a href="#team">Team</a>
   </div>
-  <a href="#contact" class="nav-cta">Join the Mission</a>
+  <a href="#contact" class="nav-cta">Get in Touch</a>
 </nav>
 
 <!-- HERO -->
@@ -212,16 +222,15 @@
   <div class="hero-bg"></div>
   <div class="voxel-bg"></div>
   <div class="hero-content">
-    <div class="hero-tag fade-up">Geospatial Intelligence for AI Infrastructure</div>
-    <h1 class="fade-up">
-      De-Risking The Future <em>Of AI Infrastructure</em>
-    </h1>
+    <div class="hero-tag fade-up">Thermal Intelligence for AI Infrastructure</div>
+    <h1 class="fade-up">De-Risking the Future<br><em>of AI Infrastructure</em></h1>
+    <p class="hero-sub-tagline fade-up">The Earth is the Cloud's Heat Sink.</p>
     <p class="hero-sub fade-up">
-      AI's water crisis is threatening the next wave of compute. Substrata identifies "Zero-Water" data center sites using 4D subsurface thermal modeling — turning geological data into infrastructure intelligence.
+      Data centers are melting the grid and draining aquifers. Communities are pushing back. Projects are being cancelled. Substrata provides the thermal intelligence to site, permit, and build AI infrastructure that the planet can sustain.
     </p>
     <div class="hero-actions fade-up">
-      <a href="#solution" class="btn-primary">See the Technology</a>
-      <a href="#team" class="btn-ghost">The Brains</a>
+      <a href="#solution" class="btn-primary">See Our Approach</a>
+      <a href="#team" class="btn-ghost">The Team</a>
     </div>
   </div>
   <div class="thermal-bar">
@@ -233,73 +242,74 @@
 <!-- STATS -->
 <div class="stats">
   <div class="stat reveal">
-    <div class="stat-num">5M</div>
-    <div class="stat-label">Gallons of water consumed<br>per hyperscale data center, daily</div>
+    <div class="stat-num">1M+</div>
+    <div class="stat-label">Gallons of water evaporated daily<br>per hyperscale facility</div>
   </div>
   <div class="stat reveal">
-    <div class="stat-num">15°C</div>
-    <div class="stat-label">Stable thermal baseline<br>of the subsurface — a free heat sink</div>
+    <div class="stat-num">10×</div>
+    <div class="stat-label">More energy per AI query<br>vs. a standard Google search</div>
   </div>
   <div class="stat reveal">
-    <div class="stat-num">10m</div>
-    <div class="stat-label">Voxel resolution of our<br>subsurface physics model</div>
+    <div class="stat-num">100kW+</div>
+    <div class="stat-label">Per AI rack — 10× the density<br>of traditional servers</div>
   </div>
 </div>
 
 <!-- PROBLEM -->
 <section class="problem" id="problem">
   <div class="section-tag"><span></span>The Crisis</div>
-  <h2>AI is Hitting<br>a Water Wall.</h2>
+  <h2>AI is Cooling<br>by Sweating.</h2>
   <div class="problem-grid">
     <div class="problem-text reveal">
-      <p>A single hyperscale data center burns through 1–5 million gallons of water every day for evaporative cooling. As municipalities face drought conditions and ban new cooling permits, the AI industry is confronting an existential infrastructure bottleneck.</p>
-      <p>Orbital compute — putting data centers in space — is the fashionable solution. But it's science fiction. Launch costs, latency, and maintenance make it commercially unviable for 99% of workloads.</p>
-      <p>The real opportunity is 10 feet below the surface. Until now, three barriers kept it untapped: siloed geological data, cheap water making engineering unnecessary, and the computational cost of 3D subsurface simulation. All three barriers have fallen.</p>
+      <p>Data centers are melting the grid and draining aquifers. Utilities are imposing connection bans. Municipalities are blocking permits. A growing share of proposed sites are failing qualification due to water and grid restrictions — and the pipeline is only getting worse.</p>
+      <p>$5.2 trillion in AI-ready infrastructure is needed by 2030. The current cooling approach can't support it. The industry has accepted a broken premise: that AI scaling and environmental survival are a binary choice.</p>
+      <p class="problem-callout">This is a false choice. Both are achievable — simultaneously — through subsurface physics.</p>
     </div>
     <div class="problem-visual reveal">
       <div class="water-wall-label">Daily Water Consumption (Millions of Gallons)</div>
       <div class="bar-chart">
-        <div class="bar-row"><div class="bar-name">Hyperscale</div><div class="bar-track"><div class="bar-fill" style="--w:95%; background: linear-gradient(90deg,var(--red),var(--orange))"></div></div><div class="bar-val">5.0M</div></div>
-        <div class="bar-row"><div class="bar-name">Large DC</div><div class="bar-track"><div class="bar-fill" style="--w:60%; background: linear-gradient(90deg,var(--orange),var(--yellow))"></div></div><div class="bar-val">2.1M</div></div>
-        <div class="bar-row"><div class="bar-name">Mid-Tier</div><div class="bar-track"><div class="bar-fill" style="--w:30%; background: var(--yellow)"></div></div><div class="bar-val">0.8M</div></div>
-        <div class="bar-row"><div class="bar-name">Substrata</div><div class="bar-track"><div class="bar-fill" style="--w:2%; background: var(--blue)"></div></div><div class="bar-val">0.0</div></div>
+        <div class="bar-row"><div class="bar-name">Hyperscale</div><div class="bar-track"><div class="bar-fill" style="--w:95%; background: linear-gradient(90deg,var(--red),var(--orange))"></div></div><div class="bar-val">1.0M+</div></div>
+        <div class="bar-row"><div class="bar-name">Large DC</div><div class="bar-track"><div class="bar-fill" style="--w:60%; background: linear-gradient(90deg,var(--orange),var(--yellow))"></div></div><div class="bar-val">~600K</div></div>
+        <div class="bar-row"><div class="bar-name">Mid-Tier</div><div class="bar-track"><div class="bar-fill" style="--w:30%; background: var(--yellow)"></div></div><div class="bar-val">~200K</div></div>
+        <div class="bar-row"><div class="bar-name">Substrata</div><div class="bar-track"><div class="bar-fill" style="--w:2%; background: var(--blue)"></div></div><div class="bar-val">Zero</div></div>
       </div>
-      <div style="margin-top:1.5rem; font-size:0.72rem; color:var(--blue); font-family:'DM Mono',monospace; letter-spacing:0.08em;">↑ Substrata sites require zero evaporative water.</div>
+      <div style="margin-top:1.5rem; font-size:0.72rem; color:var(--blue); font-family:'DM Mono',monospace; letter-spacing:0.08em;">↑ Substrata-certified sites eliminate evaporative water use.</div>
     </div>
   </div>
 </section>
 
 <!-- SOLUTION -->
 <section id="solution">
-  <div class="section-tag"><span></span>The Technology</div>
-  <h2>A 4D Physics Engine<br>for the Earth.</h2>
-  <div class="tech-cards">
-    <div class="tech-card reveal">
-      <div class="tech-card-accent"></div>
-      <h3>Ingest</h3>
-      <p> We unify fragmented subsurface and environmental datasets into a structured geospatial layer optimized for thermal analysis. What was once siloed and unusable becomes simulation-ready infrastructure intelligence.</p>
-      <div class="tech-card-tag">USGS · NASA GRACE · InSAR</div>
+  <div class="section-tag"><span></span>The Solution</div>
+  <h2>Thermal Intelligence.<br><span style="font-style:italic; color:var(--muted)">From evaporative cooling<br>to subsurface thermal assets.</span></h2>
+  <div class="pillar-cards">
+    <div class="pillar-card reveal">
+      <div class="pillar-accent"></div>
+      <h3>Thermal Flywheel</h3>
+      <p>We quantify a site's subsurface capacity to absorb and dissipate heat at AI-infrastructure scale — before you break ground. Think of it as measuring the battery life of the earth beneath a data center before committing $500M+.</p>
+      <div class="pillar-tag">Site Qualification · Pre-Construction Intelligence</div>
     </div>
-    <div class="tech-card reveal">
-      <div class="tech-card-accent"></div>
-      <h3>Model</h3>
-      <p>Our physics engine transforms geospatial inputs into a dynamic subsurface simulation environment — forecasting long-term thermal behavior under industrial-scale compute loads. We model risk before infrastructure is built.</p>
-      <div class="tech-card-tag">Voxel Modeling · Heat Plume Simulation</div>
+    <div class="pillar-card reveal">
+      <div class="pillar-accent"></div>
+      <h3>Water-Zero Certification</h3>
+      <p>We provide the subsurface thermal validation needed to bypass local water-use restrictions. Our reports certify that a site's geology can support 100% closed-loop cooling — eliminating evaporative towers and accelerating permitting by months.</p>
+      <div class="pillar-tag">Permit Acceleration · Regulatory Compliance</div>
     </div>
-    <div class="tech-card reveal">
-      <div class="tech-card-accent"></div>
-      <h3>Score</h3>
-      <p>The output is a single "Compute-to-Climate Fit" score — a standardized metric telling a developer whether a site is safe from water regulation risk for 30+ years. The Bloomberg Terminal for sustainable infrastructure.</p>
-      <div class="tech-card-tag">Risk Intelligence · Regulatory Compliance</div>
+    <div class="pillar-card reveal">
+      <div class="pillar-accent"></div>
+      <h3>Grid Citizenship</h3>
+      <p>AI inference loads are unpredictable. Our predictive buffering layer anticipates demand spikes to stabilize both the facility's cooling system and the local grid — turning data centers from grid threats into grid assets.</p>
+      <div class="pillar-tag">Predictive Buffering · Grid Stability</div>
     </div>
   </div>
 </section>
-<!-- VOXEL VIZ — D3 Isometric (translated from VoxelVisualizer.tsx) -->
+
+<!-- VOXEL VIZ -->
 <section class="voxel-section">
-  <div class="section-tag" style="justify-content:center"><span></span>Live Simulation Preview<span></span></div>
-  <h2>Heat Dissipation Across a<br>Voxelated Subsurface</h2>
-  <p style="color:var(--muted); max-width:500px; margin:0 auto; font-size:0.9rem; line-height:1.75;">
-    A real-time 4D isometric simulation of a 100MW thermal load dissipating through layered geological strata — rendered at 10-meter voxel resolution.
+  <div class="section-tag" style="justify-content:center"><span></span>Simulation Preview<span></span></div>
+  <h2>The Subsurface as<br>Infrastructure.</h2>
+  <p style="color:var(--muted); max-width:480px; margin:0 auto; font-size:0.9rem; line-height:1.75;">
+    A real-time visualization of thermal dissipation through layered geological strata — the physics engine behind every Substrata assessment.
   </p>
   <div class="voxel-canvas-wrap">
     <div class="voxel-svg-wrap">
@@ -307,144 +317,117 @@
       <div class="voxel-overlay">
         <div class="voxel-overlay-row">
           <div class="voxel-dot"></div>
-          <span class="voxel-label-main">Live 4D Thermal Simulation</span>
+          <span class="voxel-label-main">Thermal Dissipation Model</span>
         </div>
-        <div class="voxel-label-sub">10-METER VOXEL RESOLUTION // COMPUTE LOAD: 100MW</div>
+        <div class="voxel-label-sub">~15°C Baseline Geothermal Constant // 100MW Load</div>
       </div>
     </div>
-    <div class="canvas-label">Isometric View · Depth: 0–80m · Heat Load: 100MW · 20yr Projection</div>
+    <div class="canvas-label">Isometric View · Depth: 0–80m · Baseline: ~15°C Geothermal Constant</div>
   </div>
 </section>
 
-<!-- ROADMAP -->
-<section id="roadmap" style="background:var(--mid)">
-  <div class="section-tag"><span></span>Strategic Roadmap</div>
-  <h2>From Engine to<br>Federal Standard.</h2>
-  <div class="roadmap-phases">
-    <div class="phase reveal">
-      <div class="phase-num">Phase 01</div>
-      <div class="phase-year">2026</div>
-      <h3>The Engine</h3>
-      <ul>
-        <li>Complete Python Voxel simulation (thesis POC)</li>
-        <li>Build core ETL pipeline from USGS + NASA data</li>
-        <li>Launch in CS NEST Accelerator</li>
-        <li>Pilot region: National Thermal Assets Map</li>
-      </ul>
+<!-- BUSINESS MODEL -->
+<section id="model" style="background:var(--mid)">
+  <div class="section-tag"><span></span>Business Model</div>
+  <h2>The $3T Market<br>is Hitting a Water Wall.</h2>
+  <p style="color:var(--muted); max-width:580px; margin-bottom:0.5rem;">The AI data center segment alone reaches $934B by 2030 — and a growing share of proposed sites are failing qualification due to water and grid restrictions. Substrata is the site qualification standard for the AI era.</p>
+  <div class="model-tiers reveal">
+    <div class="tier">
+      <div class="tier-num">Tier 01</div>
+      <div class="tier-name">Site Screening</div>
+      <div class="tier-price">$15K – $25K per report</div>
+      <p>Rapid thermal viability score using existing GIS and geological data. Low-commitment entry point for developers evaluating new markets.</p>
     </div>
-    <div class="phase reveal">
-      <div class="phase-num">Phase 02</div>
-      <div class="phase-year">2026–27</div>
-      <h3>Acceleration</h3>
-      <ul>
-        <li>Secure pre-seed funding round</li>
-        <li>3–5 Letters of Intent from DC developers</li>
-        <li>YC W27 / Techstars application & entry</li>
-        <li>Launch Substrata Alpha product</li>
-      </ul>
+    <div class="tier">
+      <div class="tier-num">Tier 02</div>
+      <div class="tier-name">Thermal Capital Assessment</div>
+      <div class="tier-price">$75K – $150K per site</div>
+      <p>Full assessment, 20-year simulation, Water-Zero certification, and construction blueprint. The core product, delivered pre-groundbreak.</p>
     </div>
-    <div class="phase reveal">
-      <div class="phase-num">Phase 03</div>
-      <div class="phase-year">2027+</div>
-      <h3>The Standard</h3>
-      <ul>
-        <li>Lobby for Sustainable Compute Act provisions</li>
-        <li>Establish Substrata Feasibility as permit requirement</li>
-        <li>Proprietary National Risk Index for regulators</li>
-        <li>Become the LEED certification for AI infrastructure</li>
-      </ul>
+    <div class="tier">
+      <div class="tier-num">Tier 03</div>
+      <div class="tier-name">Thermal Monitoring</div>
+      <div class="tier-price">$25K – $50K / year</div>
+      <p>Post-build recurring subscription tracking thermal runway as the facility scales. Converts one-time clients into long-term relationships.</p>
     </div>
   </div>
+  <p class="model-note reveal">A single Tier-2 engagement offsets 3–5 months of permitting delay. One site pays for our first year of operations.</p>
 </section>
 
 <!-- TEAM -->
 <section id="team">
   <div class="section-tag"><span></span>Founding Team</div>
-  <h2>Three Roles.<br>One Mission.</h2>
-  <p style="color:var(--muted); max-width:550px; margin-bottom:0.5rem;">
-    We are building a founding team of committed builders — not advisors, not consultants. Everyone writes code, models physics, or closes customers.
-  </p>
+  <h2>Built at the Intersection<br>of Earth and Compute.</h2>
   <div class="team-cards">
     <div class="team-card reveal">
       <div class="role-icon">🌍</div>
-      <h3>The Architect</h3>
-      <div class="role-sub">Mara Zwicker — Co-Founder</div>
-      <p>Owns the geospatial intelligence, regulatory thesis, and long-term vision. Building the core voxel data models and initial product roadmap via Senior Thesis R&D.</p>
+      <h3>Mara Zwicker</h3>
+      <div class="role-label">CEO</div>
+      <div class="role-bg">Wisconsin Institute for Discovery · UW-Madison</div>
+      <p>GIS Research & Geospatial Intelligence. Owns the regulatory thesis, site qualification framework, and long-term infrastructure vision.</p>
       <div class="skills-row">
         <span class="skill-pill">GIS</span>
+        <span class="skill-pill">Geospatial Intel</span>
         <span class="skill-pill">Policy</span>
-        <span class="skill-pill">Geophysics</span>
-      </div>
-    </div>
-    <div class="team-card reveal">
-      <div class="role-icon">⚡</div>
-      <h3>The Hacker</h3>
-      <div class="role-sub">Trinity Krohn — Co-Founder</div>
-      <p>Full-Stack Founder: Computer Science, Data Science & Entrepreneurship Background</p>
-      <div class="skills-row">
-        <span class="skill-pill">Python</span>
-        <span class="skill-pill">API Dev</span>
-        <span class="skill-pill">Prototyping</span>
       </div>
     </div>
     <div class="team-card reveal">
       <div class="role-icon">⚙️</div>
-      <h3>The Engineer</h3>
-      <div class="role-sub">Joshika Rameshbabu — Co-Founder</div>
-      <p>Technical builder who ensures our software matches the real physics of the earth. Experience in thermodynamics, subsurface mechanics, and industrial hardware systems.</p>
+      <h3>Joshika Nachiappan</h3>
+      <div class="role-label">CTO</div>
+      <div class="role-bg">Meta · UW-Madison</div>
+      <p>Mechanical Hardware & Thermal Systems. Ensures our models match the real physics of the earth — from thermodynamics to subsurface mechanics.</p>
       <div class="skills-row">
         <span class="skill-pill">Thermodynamics</span>
-        <span class="skill-pill">Physics Sim</span>
         <span class="skill-pill">Hardware</span>
+        <span class="skill-pill">Physics Sim</span>
+      </div>
+    </div>
+    <div class="team-card reveal">
+      <div class="role-icon">⚡</div>
+      <h3>Trinity Krohn</h3>
+      <div class="role-label">CPO</div>
+      <div class="role-bg">Wells Fargo · UW-Madison</div>
+      <p>Software Architecture & AI Systems. Builds the product layer that turns geological data into infrastructure intelligence developers can act on.</p>
+      <div class="skills-row">
+        <span class="skill-pill">Software Arch</span>
+        <span class="skill-pill">AI Systems</span>
+        <span class="skill-pill">Product</span>
       </div>
     </div>
   </div>
+  <div class="team-footer-note reveal">Research-backed. Venture-built. An all-female, interdisciplinary founding team.</div>
 </section>
 
 <!-- CTA -->
 <section class="cta-footer" id="contact">
   <div class="thermal-dots"><span></span><span></span><span></span><span></span></div>
-  <h2>We Are Building the<br>Compliance Layer for<br>
-    <em style="font-family:'DM Serif Display',serif; font-style:italic; background:linear-gradient(90deg,var(--red),var(--orange),var(--yellow)); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text;">the AI Revolution.</em>
-  </h2>
+  <h2>We Are Not a Vendor.<br>We Are the <em style="font-family:'DM Serif Display',serif; font-style:italic; background:linear-gradient(90deg,var(--red),var(--orange),var(--yellow)); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text;">Site Qualification Standard</em><br>for the AI Era.</h2>
   <p>If we are right, we unlock billions in real estate value and save billions of gallons of freshwater. The data is ready. The market is desperate. The timing is now.</p>
   <div style="display:flex; gap:1rem; justify-content:center; position:relative;">
-    <a href="mailto:founders@substrata.earth" class="btn-primary">Get in Touch</a>
-    <a href="#solution" class="btn-ghost">Read the Brief</a>
+    <a href="mailto:info@substrata-systems.com" class="btn-primary">Get in Touch</a>
+    <a href="#solution" class="btn-ghost">See the Approach</a>
   </div>
 </section>
 
 <footer>
-  <div>© 2026 Substrata. All rights reserved.</div>
-  <div>De-Risking AI Infrastructure via Computational Geophysics</div>
-  <div>Founded by Mara Zwicker</div>
+  <div>© 2026 Substrata Systems. All rights reserved.</div>
+  <div>info@substrata-systems.com</div>
+  <div>Thermal Intelligence for the Next Generation of AI Infrastructure</div>
 </footer>
 
-<!-- D3 CDN — required for isometric voxel -->
+<!-- D3 CDN -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3.min.js"></script>
 <script>
 // ── D3 ISOMETRIC VOXEL VISUALIZER ──
-// Direct translation of VoxelVisualizer.tsx
 (function () {
-  const COLORS = {
-    red:    '#E8392A',
-    orange: '#F07128',
-    yellow: '#F5C842',
-    blue:   '#5B6FD4'
-  };
-
-  const width   = 800;
-  const height  = 400;
-  const size    = 6;
-  const spacing = 25;
+  const COLORS = { red: '#E8392A', orange: '#F07128', yellow: '#F5C842', blue: '#5B6FD4' };
+  const width = 800, height = 400, size = 6, spacing = 25;
 
   const svg = d3.select('#voxelSVG');
   svg.selectAll('*').remove();
+  const group = svg.append('g').attr('transform', `translate(${width / 2}, ${height / 2})`);
 
-  const group = svg.append('g')
-    .attr('transform', `translate(${width / 2}, ${height / 2})`);
-
-  // Build voxel grid — identical to TS component
   const voxels = [];
   for (let x = -size; x <= size; x++) {
     for (let y = -size; y <= size; y++) {
@@ -452,25 +435,14 @@
       voxels.push({ x, y, distance, id: `${x}-${y}` });
     }
   }
-
-  // Painter's algorithm sort (back-to-front)
   voxels.sort((a, b) => (a.x + a.y) - (b.x + b.y));
 
-  // Isometric projection — matches TS projection()
   function project(x, y, z) {
-    return {
-      px: (x - y) * spacing * 0.8,
-      py: (x + y) * spacing * 0.4 - z * spacing * 0.6
-    };
+    return { px: (x - y) * spacing * 0.8, py: (x + y) * spacing * 0.4 - z * spacing * 0.6 };
   }
-
-  // Diamond path — matches TS exactly:
-  // M px py  L px+10 py+5  L px py+10  L px-10 py+5  Z
   function diamondPath(px, py) {
     return `M ${px} ${py} L ${px + 10} ${py + 5} L ${px} ${py + 10} L ${px - 10} ${py + 5} Z`;
   }
-
-  // Color thresholds — matches TS colorForZ
   function colorForZ(z) {
     if (z > 0.6)  return COLORS.red;
     if (z > 0.2)  return COLORS.orange;
@@ -478,17 +450,11 @@
     return COLORS.blue;
   }
 
-  // Create all paths once upfront
-  const paths = group.selectAll('path')
-    .data(voxels, d => d.id)
-    .enter()
-    .append('path')
-    .attr('fill-opacity', 0.6)
-    .attr('stroke', 'rgba(255,255,255,0.1)')
-    .attr('stroke-width', 0.5);
+  const paths = group.selectAll('path').data(voxels, d => d.id).enter()
+    .append('path').attr('fill-opacity', 0.6)
+    .attr('stroke', 'rgba(255,255,255,0.1)').attr('stroke-width', 0.5);
 
   let rafId;
-
   function render(time) {
     paths
       .attr('d', d => {
@@ -496,17 +462,11 @@
         const { px, py } = project(d.x, d.y, z);
         return diamondPath(px, py);
       })
-      .attr('fill', d => {
-        const z = Math.sin(d.distance * 0.5 - time * 0.002);
-        return colorForZ(z);
-      });
-
+      .attr('fill', d => colorForZ(Math.sin(d.distance * 0.5 - time * 0.002)));
     rafId = requestAnimationFrame(render);
   }
-
   render(0);
 
-  // Pause when scrolled off-screen to save CPU
   new IntersectionObserver(entries => {
     entries.forEach(e => {
       if (!e.isIntersecting) cancelAnimationFrame(rafId);
