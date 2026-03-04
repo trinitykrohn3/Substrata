@@ -13,6 +13,7 @@
     --orange: #F07128;
     --yellow: #F5C842;
     --blue:   #5B6FD4;
+    --green:  #3acf88;
     --dark:   #0D0C0A;
     --mid:    #1A1814;
     --surface:#232019;
@@ -84,7 +85,7 @@
   .problem { background: var(--mid); }
   .problem-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; margin-top: 4rem; }
   .problem-text p { color: var(--muted); line-height: 1.8; margin-bottom: 1.5rem; }
-  .problem-callout { font-family: 'DM Mono', monospace; font-size: 0.72rem; letter-spacing: 0.08em; color: var(--muted); border-left: 2px solid var(--orange); padding-left: 1rem; line-height: 1.7; }
+  .problem-callout { font-family: 'DM Mono', monospace; font-size: 0.72rem; letter-spacing: 0.08em; color: var(--muted); border-left: 2px solid var(--green); padding-left: 1rem; line-height: 1.7; }
   .problem-visual { padding: 2rem; border: 1px solid var(--border); border-radius: 4px; background: var(--surface); }
   .water-wall-label { font-family: 'DM Mono', monospace; font-size: 0.7rem; letter-spacing: 0.15em; color: var(--red); text-transform: uppercase; margin-bottom: 1rem; }
   .bar-chart { display: flex; flex-direction: column; gap: 0.75rem; }
@@ -100,12 +101,12 @@
   .pillar-card { padding: 2rem; border: 1px solid var(--border); border-radius: 4px; background: var(--surface); transition: transform 0.3s, border-color 0.3s; }
   .pillar-card:hover { transform: translateY(-4px); }
   .pillar-card:nth-child(1):hover { border-color: var(--blue); }
-  .pillar-card:nth-child(2):hover { border-color: var(--orange); }
-  .pillar-card:nth-child(3):hover { border-color: var(--yellow); }
+  .pillar-card:nth-child(2):hover { border-color: var(--green); }
+  .pillar-card:nth-child(3):hover { border-color: var(--orange); }
   .pillar-accent { width: 32px; height: 3px; border-radius: 2px; margin-bottom: 1.5rem; }
   .pillar-card:nth-child(1) .pillar-accent { background: var(--blue); }
-  .pillar-card:nth-child(2) .pillar-accent { background: var(--orange); }
-  .pillar-card:nth-child(3) .pillar-accent { background: var(--yellow); }
+  .pillar-card:nth-child(2) .pillar-accent { background: var(--green); }
+  .pillar-card:nth-child(3) .pillar-accent { background: var(--orange); }
   .pillar-card h3 { font-family: 'DM Serif Display', serif; font-size: 1.3rem; font-weight: 400; margin-bottom: 0.75rem; }
   .pillar-card p { font-size: 0.88rem; color: var(--muted); line-height: 1.7; }
   .pillar-tag { font-family: 'DM Mono', monospace; font-size: 0.62rem; letter-spacing: 0.15em; color: var(--muted); text-transform: uppercase; margin-top: 1.25rem; padding-top: 1.25rem; border-top: 1px solid var(--border); }
@@ -127,27 +128,82 @@
   .voxel-label-sub { font-family: 'DM Mono', monospace; font-size: 0.58rem; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.25); }
   .canvas-label { font-family: 'DM Mono', monospace; font-size: 0.65rem; letter-spacing: 0.1em; color: var(--muted); text-transform: uppercase; margin-top: 1rem; }
 
-  /* BUSINESS MODEL */
-  .model-tiers { display: grid; grid-template-columns: repeat(3, 1fr); margin-top: 4rem; border: 1px solid var(--border); border-radius: 4px; overflow: hidden; }
-  .tier { padding: 2.5rem; border-right: 1px solid var(--border); transition: background 0.3s; }
-  .tier:last-child { border-right: none; }
-  .tier:hover { background: var(--surface); }
-  .tier-num { font-family: 'DM Mono', monospace; font-size: 0.65rem; letter-spacing: 0.2em; color: var(--muted); text-transform: uppercase; margin-bottom: 0.75rem; }
-  .tier-name { font-family: 'DM Serif Display', serif; font-size: 1.5rem; margin-bottom: 0.4rem; }
-  .tier:nth-child(1) .tier-name { color: var(--blue); }
-  .tier:nth-child(2) .tier-name { color: var(--orange); }
-  .tier:nth-child(3) .tier-name { color: var(--yellow); }
-  .tier-price { font-family: 'DM Mono', monospace; font-size: 0.75rem; letter-spacing: 0.08em; color: var(--muted); margin-bottom: 1.25rem; padding-bottom: 1.25rem; border-bottom: 1px solid var(--border); }
-  .tier p { font-size: 0.85rem; color: var(--muted); line-height: 1.7; }
-  .model-note { font-family: 'DM Mono', monospace; font-size: 0.72rem; letter-spacing: 0.05em; color: var(--muted); margin-top: 2rem; border-left: 2px solid var(--orange); padding-left: 1rem; }
+  /* METHODOLOGY STEPS */
+  .methodology { padding: 7rem 3rem; }
+  .method-steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; margin-top: 4rem; border: 1px solid var(--border); border-radius: 4px; overflow: hidden; }
+  .method-step { padding: 2rem; border-right: 1px solid var(--border); position: relative; transition: background 0.3s; }
+  .method-step:last-child { border-right: none; }
+  .method-step:hover { background: var(--surface); }
+  .method-step-line { height: 2px; width: 100%; margin-bottom: 1.5rem; }
+  .method-step:nth-child(1) .method-step-line { background: var(--blue); }
+  .method-step:nth-child(2) .method-step-line { background: var(--green); }
+  .method-step:nth-child(3) .method-step-line { background: var(--orange); }
+  .method-step:nth-child(4) .method-step-line { background: var(--red); }
+  .method-num { font-family: 'DM Mono', monospace; font-size: 0.65rem; letter-spacing: 0.2em; margin-bottom: 0.75rem; }
+  .method-step:nth-child(1) .method-num { color: var(--blue); }
+  .method-step:nth-child(2) .method-num { color: var(--green); }
+  .method-step:nth-child(3) .method-num { color: var(--orange); }
+  .method-step:nth-child(4) .method-num { color: var(--red); }
+  .method-step h3 { font-family: 'DM Serif Display', serif; font-size: 1.3rem; font-weight: 400; margin-bottom: 0.75rem; }
+  .method-step p { font-size: 0.82rem; color: var(--muted); line-height: 1.7; }
+  .method-flow { font-family: 'DM Mono', monospace; font-size: 0.68rem; letter-spacing: 0.1em; color: var(--muted); margin-top: 2rem; text-align: center; }
+
+  /* MARKET */
+  .market { background: var(--mid); }
+  .market-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; margin-top: 4rem; }
+  .market-big-num { font-family: 'DM Serif Display', serif; font-size: clamp(4rem, 8vw, 7rem); color: var(--green); line-height: 1; margin-bottom: 0.5rem; }
+  .market-big-label { font-family: 'DM Mono', monospace; font-size: 0.72rem; letter-spacing: 0.1em; color: var(--muted); }
+  .market-blockers { display: flex; flex-direction: column; gap: 1.5rem; }
+  .market-blocker { padding: 1.5rem; border: 1px solid var(--border); border-radius: 4px; background: var(--surface); transition: border-color 0.3s; }
+  .market-blocker:nth-child(1) { border-left: 3px solid var(--red); }
+  .market-blocker:nth-child(2) { border-left: 3px solid var(--blue); }
+  .market-blocker-title { font-family: 'DM Mono', monospace; font-size: 0.68rem; letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 0.5rem; }
+  .market-blocker:nth-child(1) .market-blocker-title { color: var(--red); }
+  .market-blocker:nth-child(2) .market-blocker-title { color: var(--blue); }
+  .market-blocker p { font-size: 0.83rem; color: var(--muted); line-height: 1.6; }
+  .market-callout { font-family: 'DM Mono', monospace; font-size: 0.72rem; letter-spacing: 0.08em; color: var(--green); border-left: 2px solid var(--green); padding-left: 1rem; line-height: 1.7; margin-top: 2rem; }
+
+  /* COMPETITION */
+  .competition { padding: 7rem 3rem; }
+  .comp-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; margin-top: 4rem; align-items: start; }
+  .comp-chart { position: relative; border: 1px solid var(--border); border-radius: 4px; background: var(--surface); padding: 2rem; aspect-ratio: 1; }
+  .comp-axis-x { position: absolute; bottom: 2.5rem; left: 2rem; right: 2rem; height: 1px; background: rgba(255,255,255,0.1); }
+  .comp-axis-y { position: absolute; bottom: 2rem; left: 50%; top: 2rem; width: 1px; background: rgba(255,255,255,0.1); }
+  .comp-axis-label-x { position: absolute; bottom: 0.8rem; right: 2rem; font-family: 'DM Mono', monospace; font-size: 0.58rem; letter-spacing: 0.12em; color: var(--muted); text-transform: uppercase; }
+  .comp-axis-label-y { position: absolute; top: 1.5rem; left: 2rem; font-family: 'DM Mono', monospace; font-size: 0.58rem; letter-spacing: 0.12em; color: var(--muted); text-transform: uppercase; writing-mode: vertical-rl; transform: rotate(180deg); }
+  .comp-dot { position: absolute; display: flex; flex-direction: column; align-items: center; gap: 0.35rem; transform: translate(-50%, -50%); }
+  .comp-dot-circle { width: 16px; height: 16px; border-radius: 50%; border: 2px solid; }
+  .comp-dot-label { font-family: 'DM Mono', monospace; font-size: 0.6rem; letter-spacing: 0.08em; color: var(--muted); white-space: nowrap; }
+  .comp-dot.substrata .comp-dot-circle { background: var(--blue); border-color: var(--blue); width: 20px; height: 20px; box-shadow: 0 0 16px rgba(91,111,212,0.6); }
+  .comp-dot.substrata .comp-dot-label { color: var(--blue); font-weight: 500; }
+  .comp-players { display: flex; flex-direction: column; gap: 1rem; }
+  .comp-player { padding: 1.25rem; border: 1px solid var(--border); border-radius: 4px; background: var(--surface); }
+  .comp-player-title { font-family: 'DM Mono', monospace; font-size: 0.62rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--orange); margin-bottom: 0.5rem; }
+  .comp-player p { font-size: 0.8rem; color: var(--muted); line-height: 1.6; }
+  .comp-conclusion { font-family: 'DM Mono', monospace; font-size: 0.72rem; letter-spacing: 0.06em; color: var(--muted); margin-top: 1.5rem; padding: 1rem; border: 1px solid var(--border); border-radius: 4px; background: var(--surface); line-height: 1.7; }
+  .comp-conclusion strong { color: var(--green); font-weight: 400; }
+
+  /* ROADMAP */
+  .roadmap { background: var(--mid); }
+  .roadmap-phases { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 4rem; }
+  .roadmap-phase { padding: 2rem; border: 1px solid var(--border); border-radius: 4px; background: var(--surface); position: relative; overflow: hidden; transition: transform 0.3s; }
+  .roadmap-phase:hover { transform: translateY(-4px); }
+  .roadmap-phase-num { font-family: 'DM Mono', monospace; font-size: 0.6rem; letter-spacing: 0.2em; color: var(--muted); text-transform: uppercase; margin-bottom: 0.5rem; }
+  .roadmap-phase-timeline { font-family: 'DM Mono', monospace; font-size: 0.65rem; letter-spacing: 0.1em; margin-bottom: 1.25rem; padding-bottom: 1.25rem; border-bottom: 1px solid var(--border); }
+  .roadmap-phase:nth-child(1) .roadmap-phase-timeline { color: var(--blue); }
+  .roadmap-phase:nth-child(2) .roadmap-phase-timeline { color: var(--green); }
+  .roadmap-phase:nth-child(3) .roadmap-phase-timeline { color: var(--orange); }
+  .roadmap-phase h3 { font-family: 'DM Serif Display', serif; font-size: 1.4rem; font-weight: 400; margin-bottom: 0.75rem; }
+  .roadmap-phase:nth-child(1):hover { border-color: var(--blue); }
+  .roadmap-phase:nth-child(2):hover { border-color: var(--green); }
+  .roadmap-phase:nth-child(3):hover { border-color: var(--orange); }
+  .roadmap-phase p { font-size: 0.83rem; color: var(--muted); line-height: 1.7; }
+  .roadmap-milestone { font-family: 'DM Mono', monospace; font-size: 0.62rem; letter-spacing: 0.12em; text-transform: uppercase; margin-top: 1.25rem; padding-top: 1.25rem; border-top: 1px solid var(--border); color: var(--muted); }
 
   /* TEAM */
   .team-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 4rem; }
   .team-card { padding: 2rem; border: 1px solid var(--border); border-radius: 4px; background: var(--surface); text-align: center; }
-  .role-icon { width: 56px; height: 56px; border-radius: 50%; margin: 0 auto 1.25rem; display: flex; align-items: center; justify-content: center; font-size: 1.4rem; }
-  .team-card:nth-child(1) .role-icon { background: rgba(232,57,42,0.15); }
-  .team-card:nth-child(2) .role-icon { background: rgba(240,113,40,0.15); }
-  .team-card:nth-child(3) .role-icon { background: rgba(245,200,66,0.15); }
+  .role-icon { width: 56px; height: 56px; border-radius: 50%; margin: 0 auto 1.25rem; display: flex; align-items: center; justify-content: center; font-size: 1.4rem; object-fit: cover; }
   .team-card h3 { font-family: 'DM Serif Display', serif; font-size: 1.2rem; font-weight: 400; margin-bottom: 0.25rem; }
   .role-label { font-family: 'DM Mono', monospace; font-size: 0.65rem; letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 0.25rem; }
   .team-card:nth-child(1) .role-label { color: var(--red); }
@@ -190,12 +246,13 @@
     .hero { padding: 8rem 1.5rem 4rem; }
     .thermal-bar { display: none; }
     section { padding: 5rem 1.5rem; }
-    .problem-grid, .pillar-cards, .model-tiers, .team-cards { grid-template-columns: 1fr; }
+    .problem-grid, .pillar-cards, .market-grid, .comp-grid, .roadmap-phases, .team-cards, .method-steps { grid-template-columns: 1fr; }
     .stats { grid-template-columns: 1fr; }
     .stat { border-right: none; border-bottom: 1px solid var(--border); }
-    .tier { border-right: none; border-bottom: 1px solid var(--border); }
+    .method-step { border-right: none; border-bottom: 1px solid var(--border); }
     footer { flex-direction: column; gap: 0.5rem; text-align: center; }
     .voxel-viewport { height: 340px; }
+    .comp-chart { aspect-ratio: unset; min-height: 320px; }
   }
 </style>
 </head>
@@ -215,7 +272,7 @@
   <div class="nav-links">
     <a href="#problem">Problem</a>
     <a href="#solution">Solution</a>
-    <a href="#model">Business</a>
+    <a href="#market">Market</a>
     <a href="#team">Team</a>
   </div>
   <a href="#contact" class="nav-cta">Get in Touch</a>
@@ -227,9 +284,9 @@
   <div class="grid-bg"></div>
   <div class="hero-content">
     <div class="hero-tag fade-up">Thermal Intelligence for AI Infrastructure</div>
-    <h1 class="fade-up">De-Risking the Future<br><em>of AI Infrastructure</em></h1>
+    <h1 class="fade-up">The Ground Truth<br><em>for AI Infrastructure.</em></h1>
     <p class="hero-sub-tagline fade-up">The Earth is the Cloud's Heat Sink.</p>
-    <p class="hero-sub fade-up">Data centers are melting the grid and draining aquifers. Communities are pushing back. Projects are being cancelled. Substrata provides the thermal intelligence to site, permit, and build AI infrastructure that the planet can sustain.</p>
+    <p class="hero-sub fade-up">The $3T pipeline for AI-ready data centers is stalling. Utilities are imposing connection bans. Communities are blocking permits. Substrata is the site qualification standard that unlocks it — using subsurface thermal intelligence to site, permit, and build infrastructure the planet can sustain.</p>
     <div class="hero-actions fade-up">
       <a href="#solution" class="btn-primary">See Our Approach</a>
       <a href="#team" class="btn-ghost">The Team</a>
@@ -244,28 +301,28 @@
 <!-- STATS -->
 <div class="stats">
   <div class="stat reveal">
-    <div class="stat-num">1M+</div>
-    <div class="stat-label">Gallons of water evaporated daily<br>per hyperscale facility</div>
+    <div class="stat-num">6–18</div>
+    <div class="stat-label">Months to site a single facility<br>under current approaches</div>
   </div>
   <div class="stat reveal">
-    <div class="stat-num">10×</div>
-    <div class="stat-label">More energy per AI query<br>vs. a standard Google search</div>
+    <div class="stat-num">$8–12M</div>
+    <div class="stat-label">Per MW in construction costs —<br>before permitting delays</div>
   </div>
   <div class="stat reveal">
-    <div class="stat-num">100kW+</div>
-    <div class="stat-label">Per AI rack — 10× the density<br>of traditional servers</div>
+    <div class="stat-num">$3T</div>
+    <div class="stat-label">Total data center investment<br>required by 2030 — JLL</div>
   </div>
 </div>
 
 <!-- PROBLEM -->
 <section class="problem" id="problem">
   <div class="section-tag"><span></span>The Crisis</div>
-  <h2>AI is Cooling<br>by Sweating.</h2>
+  <h2>AI Scales in Weeks.<br>Infrastructure Takes Years.</h2>
   <div class="problem-grid">
     <div class="problem-text reveal">
-      <p>Data centers are melting the grid and draining aquifers. Utilities are imposing connection bans. Municipalities are blocking permits. A growing share of proposed sites are failing qualification due to water and grid restrictions — and the pipeline is only getting worse.</p>
-      <p>$5.2 trillion in AI-ready infrastructure is needed by 2030. The current cooling approach can't support it. The industry has accepted a broken premise: that AI scaling and environmental survival are a binary choice.</p>
-      <p class="problem-callout">This is a false choice. Both are achievable — simultaneously — through subsurface physics.</p>
+      <p>Data centers are melting the grid and draining aquifers. Utilities are imposing connection bans on new facilities. Municipalities are blocking permits. Over $100B in projects were blocked by community opposition in a single quarter.</p>
+      <p>$3T in AI-ready infrastructure is needed by 2030. The industry has no data layer to deploy it efficiently. The current siting approach is broken — and it's slowing the entire AI buildout.</p>
+      <p class="problem-callout">Sustainable siting isn't the tradeoff. It's how you scale faster. — Substrata</p>
     </div>
     <div class="problem-visual reveal">
       <div class="water-wall-label">Daily Water Consumption (Millions of Gallons)</div>
@@ -273,9 +330,9 @@
         <div class="bar-row"><div class="bar-name">Hyperscale</div><div class="bar-track"><div class="bar-fill" style="--w:95%; background: linear-gradient(90deg,var(--red),var(--orange))"></div></div><div class="bar-val">1.0M+</div></div>
         <div class="bar-row"><div class="bar-name">Large DC</div><div class="bar-track"><div class="bar-fill" style="--w:60%; background: linear-gradient(90deg,var(--orange),var(--yellow))"></div></div><div class="bar-val">~600K</div></div>
         <div class="bar-row"><div class="bar-name">Mid-Tier</div><div class="bar-track"><div class="bar-fill" style="--w:30%; background: var(--yellow)"></div></div><div class="bar-val">~200K</div></div>
-        <div class="bar-row"><div class="bar-name">Substrata</div><div class="bar-track"><div class="bar-fill" style="--w:2%; background: #3acf88"></div></div><div class="bar-val">Zero</div></div>
+        <div class="bar-row"><div class="bar-name">Substrata</div><div class="bar-track"><div class="bar-fill" style="--w:2%; background: var(--green)"></div></div><div class="bar-val">Zero</div></div>
       </div>
-      <div style="margin-top:1.5rem; font-size:0.72rem; color:#3acf88; font-family:'DM Mono',monospace; letter-spacing:0.08em;">↑ Substrata-certified sites eliminate evaporative water use.</div>
+      <div style="margin-top:1.5rem; font-size:0.72rem; color:var(--green); font-family:'DM Mono',monospace; letter-spacing:0.08em;">↑ Substrata-certified sites eliminate evaporative water use.</div>
     </div>
   </div>
 </section>
@@ -283,25 +340,25 @@
 <!-- SOLUTION -->
 <section id="solution">
   <div class="section-tag"><span></span>The Solution</div>
-  <h2>Thermal Intelligence.<br><span style="font-style:italic; color:var(--muted)">From evaporative cooling<br>to subsurface thermal assets.</span></h2>
+  <h2>The Data Layer AI<br><span style="font-style:italic; color:var(--muted)">Infrastructure Has Been Missing.</span></h2>
   <div class="pillar-cards">
     <div class="pillar-card reveal">
       <div class="pillar-accent"></div>
+      <h3>Site Intelligence</h3>
+      <p>Ranked site scores across geology, thermal horizon, and water risk. Proprietary geospatial and subsurface data mapped to any target parcel in minutes. Decisions in hours, not months.</p>
+      <div class="pillar-tag">Geospatial Modeling · Pre-Construction Intelligence</div>
+    </div>
+    <div class="pillar-card reveal">
+      <div class="pillar-accent"></div>
+      <h3>Permitting Velocity</h3>
+      <p>Automated thermal validation proves water neutrality — the #1 permitting blocker — before you break ground. Our reports certify that a site's geology supports 100% closed-loop cooling, accelerating permitting by months.</p>
+      <div class="pillar-tag">Water-Zero Certification · Regulatory Compliance</div>
+    </div>
+    <div class="pillar-card reveal">
+      <div class="pillar-accent"></div>
       <h3>Thermal Flywheel</h3>
-      <p>We quantify a site's subsurface capacity to absorb and dissipate heat at AI-infrastructure scale — before you break ground. Think of it as measuring the battery life of the earth beneath a data center before committing $500M+.</p>
-      <div class="pillar-tag">Site Qualification · Pre-Construction Intelligence</div>
-    </div>
-    <div class="pillar-card reveal">
-      <div class="pillar-accent"></div>
-      <h3>Water-Zero Certification</h3>
-      <p>We provide the subsurface thermal validation needed to bypass local water-use restrictions. Our reports certify that a site's geology can support 100% closed-loop cooling — eliminating evaporative towers and accelerating permitting by months.</p>
-      <div class="pillar-tag">Permit Acceleration · Regulatory Compliance</div>
-    </div>
-    <div class="pillar-card reveal">
-      <div class="pillar-accent"></div>
-      <h3>Grid Citizenship</h3>
-      <p>AI inference loads are unpredictable. Our predictive buffering layer anticipates demand spikes to stabilize both the facility's cooling system and the local grid — turning data centers from grid threats into grid assets.</p>
-      <div class="pillar-tag">Predictive Buffering · Grid Stability</div>
+      <p>We quantify a site's subsurface battery life before you break ground. Think of it as measuring the thermal capacity of the earth beneath a data center — before committing $500M+.</p>
+      <div class="pillar-tag">Thermal Horizon · Capacity Modeling</div>
     </div>
   </div>
 </section>
@@ -324,11 +381,150 @@
         <div class="voxel-label-sub">~15°C Baseline Geothermal Constant // 100MW Compute Load</div>
       </div>
     </div>
-    <div class="canvas-label">3D Voxel View · Depth: 0–120m · Heat Source: Surface Centre · 20-Year Projection</div>
+    <div class="canvas-label">3D Voxel View · Depth: 0–120m · Heat Source: Surface Centre · 15-Year Lifecycle Projection</div>
   </div>
 </section>
 
-<!-- BUSINESS MODEL -->
+<!-- TECHNICAL METHODOLOGY -->
+<section class="methodology">
+  <div class="section-tag"><span></span>Technical Methodology</div>
+  <h2>Voxel-Based Thermal<br>Capacity Maps.</h2>
+  <div class="method-steps reveal">
+    <div class="method-step">
+      <div class="method-step-line"></div>
+      <div class="method-num">01</div>
+      <h3>Model</h3>
+      <p>Proprietary geospatial and subsurface data mapped to any target parcel in minutes.</p>
+    </div>
+    <div class="method-step">
+      <div class="method-step-line"></div>
+      <div class="method-num">02</div>
+      <h3>Predict</h3>
+      <p>Time-series simulation of heat absorption and dissipation across a 15-year facility lifecycle.</p>
+    </div>
+    <div class="method-step">
+      <div class="method-step-line"></div>
+      <div class="method-num">03</div>
+      <h3>Optimize</h3>
+      <p>Pinpoint the Thermal Sweet Spot — maximum compute density, zero saturation risk.</p>
+    </div>
+    <div class="method-step">
+      <div class="method-step-line"></div>
+      <div class="method-num">04</div>
+      <h3>Grade</h3>
+      <p>Standardized site score based on Sustainable Operating Horizon — the first thermal siting metric for AI infrastructure.</p>
+    </div>
+  </div>
+  <div class="method-flow reveal">Ingest → Model → Predict → Optimize</div>
+</section>
+
+<!-- MARKET -->
+<section class="market" id="market">
+  <div class="section-tag"><span></span>The Market</div>
+  <h2>The $3T Pipeline<br>Is Stalling.</h2>
+  <div class="market-grid">
+    <div class="reveal">
+      <div class="market-big-num">$3T</div>
+      <div class="market-big-label">Total data center investment required by 2030 — JLL</div>
+    </div>
+    <div>
+      <div class="market-blockers reveal">
+        <div class="market-blocker">
+          <div class="market-blocker-title">Frozen</div>
+          <p>Utilities imposing connection bans on new data centers. Grid interconnection queues stretching years.</p>
+        </div>
+        <div class="market-blocker">
+          <div class="market-blocker-title">Grid-Locked</div>
+          <p>Substrata qualifies and unlocks next-generation viable sites — turning stranded parcels into deployable infrastructure.</p>
+        </div>
+      </div>
+      <div class="market-callout reveal">We are not a vendor. We are the site qualification standard for the AI era.</div>
+    </div>
+  </div>
+</section>
+
+<!-- COMPETITION -->
+<section class="competition" id="competition">
+  <div class="section-tag"><span></span>The Competition</div>
+  <h2>No One Else<br>Sits Here.</h2>
+  <p style="color:var(--muted); font-size:0.9rem; line-height:1.75; max-width:560px;">Subsurface Thermal Intelligence × AI-Scale Deployment Focus</p>
+  <div class="comp-grid">
+    <div class="comp-chart reveal">
+      <div class="comp-axis-x"></div>
+      <div class="comp-axis-y"></div>
+      <div class="comp-axis-label-x">Subsurface Thermal Expertise →</div>
+      <div class="comp-axis-label-y">↑ AI-Scale Data Center Focus</div>
+      <!-- JLL / CBRE: high AI focus, low thermal -->
+      <div class="comp-dot" style="left:28%; top:28%">
+        <div class="comp-dot-circle" style="border-color:var(--red); background:transparent;"></div>
+        <div class="comp-dot-label">JLL / CBRE</div>
+      </div>
+      <!-- Vertiv / Schneider: mid AI focus, low thermal -->
+      <div class="comp-dot" style="left:28%; top:42%">
+        <div class="comp-dot-circle" style="border-color:var(--orange); background:transparent;"></div>
+        <div class="comp-dot-label">Vertiv / Schneider</div>
+      </div>
+      <!-- Terracon: low AI focus, mid thermal -->
+      <div class="comp-dot" style="left:52%; top:65%">
+        <div class="comp-dot-circle" style="border-color:var(--muted); background:transparent;"></div>
+        <div class="comp-dot-label">Terracon / Arcadis</div>
+      </div>
+      <!-- Substrata: high AI focus, high thermal -->
+      <div class="comp-dot substrata" style="left:72%; top:25%">
+        <div class="comp-dot-circle"></div>
+        <div class="comp-dot-label">SUBSTRATA</div>
+      </div>
+    </div>
+    <div>
+      <div class="comp-players reveal">
+        <div class="comp-player">
+          <div class="comp-player-title">JLL / CBRE — Real Estate</div>
+          <p>Gap: Find sites. Don't validate them. No subsurface physics, no thermal horizon modeling.</p>
+        </div>
+        <div class="comp-player">
+          <div class="comp-player-title">Vertiv / Schneider — Hardware</div>
+          <p>Gap: Treat symptoms after siting decisions are made. No upstream site intelligence.</p>
+        </div>
+        <div class="comp-player">
+          <div class="comp-player-title">Terracon / Arcadis — Traditional AEC</div>
+          <p>Gap: Built for traditional loads. Not designed for AI-scale density or permitting speed.</p>
+        </div>
+      </div>
+      <div class="comp-conclusion reveal">No existing player combines <strong>subsurface thermal science</strong> with <strong>AI infrastructure scale</strong>. That's the gap Substrata fills.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ROADMAP -->
+<section class="roadmap" id="roadmap">
+  <div class="section-tag"><span></span>Roadmap</div>
+  <h2>Three Phases to<br>Category Definition.</h2>
+  <div class="roadmap-phases">
+    <div class="roadmap-phase reveal">
+      <div class="roadmap-phase-num">Phase 1</div>
+      <div class="roadmap-phase-timeline">Month 0–18</div>
+      <h3>Intelligence</h3>
+      <p>Automated site screening. First pilot deployments. Establish the scoring standard.</p>
+      <div class="roadmap-milestone">Milestone · First Pilot Deployments</div>
+    </div>
+    <div class="roadmap-phase reveal">
+      <div class="roadmap-phase-num">Phase 2</div>
+      <div class="roadmap-phase-timeline">Month 18–36</div>
+      <h3>Validation</h3>
+      <p>Substrata Certified™ launches. Regulatory alignment. Expansion into 50+ markets.</p>
+      <div class="roadmap-milestone">Milestone · Substrata Certified™</div>
+    </div>
+    <div class="roadmap-phase reveal">
+      <div class="roadmap-phase-num">Phase 3</div>
+      <div class="roadmap-phase-timeline">Month 36+</div>
+      <h3>Infrastructure</h3>
+      <p>Industry licensing standard. Hardware partner network. Category defined.</p>
+      <div class="roadmap-milestone">Milestone · Industry Standard</div>
+    </div>
+  </div>
+</section>
+
+<!-- TEAM -->
 <!-- TEAM -->
 <section id="team">
   <div class="section-tag"><span></span>Founding Team</div>
@@ -375,6 +571,8 @@
 </section>
 
 <!-- CTA -->
+
+<!-- CTA -->
 <section class="cta-footer" id="contact">
   <div class="thermal-dots"><span></span><span></span><span></span><span></span></div>
   <h2>We Are Not a Vendor.<br>We Are the <em style="font-family:'DM Serif Display',serif; font-style:italic; background:linear-gradient(90deg,var(--red),var(--orange),var(--yellow)); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text;">Site Qualification Standard</em><br>for the AI Era.</h2>
@@ -400,15 +598,12 @@
   const canvas   = document.getElementById('voxelCanvas');
   const viewport = canvas.parentElement;
 
-  // Renderer
   const renderer = new THREE.WebGLRenderer({ canvas: canvas, antialias: true });
   renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
   renderer.setClearColor(0x080808, 1);
 
-  // Scene + Camera
   const scene  = new THREE.Scene();
   const camera = new THREE.PerspectiveCamera(38, 1, 0.1, 400);
-  // Elevated isometric-ish angle matching the reference screenshot
   camera.position.set(30, 38, 30);
   camera.lookAt(0, -6, 0);
 
@@ -422,19 +617,14 @@
   onResize();
   window.addEventListener('resize', onResize);
 
-  // Lights
   scene.add(new THREE.AmbientLight(0x112233, 1.8));
-
   var key = new THREE.DirectionalLight(0xffffff, 1.0);
   key.position.set(20, 40, 20);
   scene.add(key);
-
   var fill = new THREE.DirectionalLight(0x003355, 0.5);
   fill.position.set(-15, 10, -15);
   scene.add(fill);
 
-  // Color palette: warm yellow-green (hot, top centre) → teal (mid) → deep blue (cool, bottom/edges)
-  // Matches reference screenshot palette exactly
   var PALETTE = [
     [0.00, [0.03, 0.12, 0.24]],
     [0.15, [0.04, 0.24, 0.30]],
@@ -450,9 +640,7 @@
     t = t < 0 ? 0 : t > 1 ? 1 : t;
     var lo = PALETTE[0], hi = PALETTE[PALETTE.length - 1];
     for (var i = 0; i < PALETTE.length - 1; i++) {
-      if (t >= PALETTE[i][0] && t <= PALETTE[i+1][0]) {
-        lo = PALETTE[i]; hi = PALETTE[i+1]; break;
-      }
+      if (t >= PALETTE[i][0] && t <= PALETTE[i+1][0]) { lo = PALETTE[i]; hi = PALETTE[i+1]; break; }
     }
     var f = (lo[0] === hi[0]) ? 0 : (t - lo[0]) / (hi[0] - lo[0]);
     return new THREE.Color(
@@ -462,69 +650,46 @@
     );
   }
 
-  // Voxel grid dimensions
-  var COLS   = 16;
-  var ROWS   = 16;
-  var LAYERS = 14;   // depth layers going downward
-  var VSIZ   = 0.87; // cube size (leaves small gaps between voxels)
-  var STEP   = 1.0;
-
+  var COLS = 16, ROWS = 16, LAYERS = 14, VSIZ = 0.87, STEP = 1.0;
   var offX = -(COLS - 1) * STEP / 2;
   var offZ = -(ROWS - 1) * STEP / 2;
   var maxR = Math.sqrt(Math.pow((COLS - 1) / 2, 2) + Math.pow((ROWS - 1) / 2, 2));
 
-  var geo    = new THREE.BoxGeometry(VSIZ, VSIZ, VSIZ);
+  var geo = new THREE.BoxGeometry(VSIZ, VSIZ, VSIZ);
   var voxels = [];
 
   for (var xi = 0; xi < COLS; xi++) {
     for (var zi = 0; zi < ROWS; zi++) {
       var cx = xi - (COLS - 1) / 2;
       var cz = zi - (ROWS - 1) / 2;
-      var horizDist = Math.sqrt(cx * cx + cz * cz) / maxR; // 0=centre, 1=corner
-
+      var horizDist = Math.sqrt(cx * cx + cz * cz) / maxR;
       for (var yi = 0; yi < LAYERS; yi++) {
-        var depthFrac = yi / (LAYERS - 1); // 0=top, 1=bottom
-
-        // Gaussian heat: hot at top-centre, cools with depth and lateral distance
+        var depthFrac = yi / (LAYERS - 1);
         var radialDecay = Math.exp(-horizDist * horizDist * 3.5);
         var depthDecay  = Math.exp(-depthFrac * 2.6);
         var baseHeat    = radialDecay * depthDecay;
-
         var mat  = new THREE.MeshLambertMaterial({ color: getColor(baseHeat) });
         var mesh = new THREE.Mesh(geo, mat);
-        mesh.position.set(
-          offX + xi * STEP,
-          -yi * STEP,          // stack downward
-          offZ + zi * STEP
-        );
+        mesh.position.set(offX + xi * STEP, -yi * STEP, offZ + zi * STEP);
         scene.add(mesh);
-        voxels.push({ mesh: mesh, mat: mat, horizDist: horizDist, depthFrac: depthFrac, baseHeat: baseHeat });
+        voxels.push({ mesh, mat, horizDist, depthFrac, baseHeat });
       }
     }
   }
 
-  // Wireframe outline box above the voxel block (like in the reference image)
-  var bW = COLS * STEP + 0.6;
-  var bH = COLS * STEP * 0.95;
-  var bD = ROWS * STEP + 0.6;
+  var bW = COLS * STEP + 0.6, bH = COLS * STEP * 0.95, bD = ROWS * STEP + 0.6;
   var wireGeo = new THREE.EdgesGeometry(new THREE.BoxGeometry(bW, bH, bD));
   var wireMat = new THREE.LineBasicMaterial({ color: 0x55eedd, transparent: true, opacity: 0.45 });
   var wireframe = new THREE.LineSegments(wireGeo, wireMat);
   wireframe.position.set(0, bH / 2 + 0.3, 0);
   scene.add(wireframe);
 
-  // Animate
-  var rafId   = null;
-  var startTs = null;
-  var ROT     = 0.00042; // radians per ms
+  var rafId = null, startTs = null, ROT = 0.00042;
 
   function animate(ts) {
     if (!startTs) startTs = ts;
     var elapsed = ts - startTs;
-
     scene.rotation.y = elapsed * ROT;
-
-    // Subtle surface-centre heat pulse
     var pulse = Math.sin(elapsed * 0.0017) * 0.065;
     for (var i = 0; i < voxels.length; i++) {
       var v = voxels[i];
@@ -533,33 +698,28 @@
       h = h < 0 ? 0 : h > 1 ? 1 : h;
       v.mat.color.copy(getColor(h));
     }
-
     wireMat.opacity = 0.38 + Math.sin(elapsed * 0.001) * 0.12;
-
     renderer.render(scene, camera);
     rafId = requestAnimationFrame(animate);
   }
 
-  // Intersection observer: pause when off screen
   var io = new IntersectionObserver(function(entries) {
     entries.forEach(function(e) {
-      if (e.isIntersecting) {
-        rafId = requestAnimationFrame(animate);
-      } else {
-        if (rafId) { cancelAnimationFrame(rafId); rafId = null; }
-      }
+      if (e.isIntersecting) { rafId = requestAnimationFrame(animate); }
+      else { if (rafId) { cancelAnimationFrame(rafId); rafId = null; } }
     });
   }, { threshold: 0.05 });
   io.observe(canvas);
 })();
 
-// Scroll reveal
 var revealObs = new IntersectionObserver(function(entries) {
-  entries.forEach(function(e) {
-    if (e.isIntersecting) e.target.classList.add('visible');
-  });
+  entries.forEach(function(e) { if (e.isIntersecting) e.target.classList.add('visible'); });
 }, { threshold: 0.1 });
 document.querySelectorAll('.reveal').forEach(function(el) { revealObs.observe(el); });
 </script>
 </body>
 </html>
+
+<!-- BUSINESS MODEL -->
+
+
